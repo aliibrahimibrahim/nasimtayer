@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nasim tayer | الكتالوج</title>
+<link rel="icon" type="image/png" href="assets/icos/nasimweb.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="lang-switcher">
+  <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">العربية</button>
+  <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">Français</button>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="assets/icos/logo.png" alt="نسيم طير" class="lmark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="back_to_main">العودة للرئيسية</a></li>
+    <li><a href="https://wa.me/905432830064" class="ncta" data-i18n="nav_contact" target="_blank">تواصل معنا</a></li>
+  </ul>
+  <div class="hburg" onclick="tog()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobmenu" id="mob">
+  <button class="mobclose" onclick="tog()">✕</button>
+  <a href="index.html" onclick="tog()" data-i18n="back_to_main">العودة للرئيسية</a>
+  <a href="https://wa.me/905432830064" onclick="tog()" data-i18n="nav_contact" target="_blank">تواصل معنا</a>
+</div>
+
+<div class="catalog-header reveal">
+  <h1 class="catalog-title" data-i18n="cat_primary_title">كتالوج المرحلة الابتدائية</h1>
+  <p class="catalog-sub" data-i18n="cat_primary_desc">ألوان وتصاميم مريحة ومبهجة لأطفالنا</p>
+  <div class="coming-soon-badge" data-i18n="coming_soon">قريباً</div>
+</div>
+
+<div class="catalog-grid reveal">
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 01</h3>
+      <p class="catalog-item-code">#NT-P001</p>
+    </div>
+  </div>
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 02</h3>
+      <p class="catalog-item-code">#NT-P002</p>
+    </div>
+  </div>
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 03</h3>
+      <p class="catalog-item-code">#NT-P003</p>
+    </div>
+  </div>
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 04</h3>
+      <p class="catalog-item-code">#NT-P004</p>
+    </div>
+  </div>
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 05</h3>
+      <p class="catalog-item-code">#NT-P005</p>
+    </div>
+  </div>
+  <div class="catalog-item">
+    <div class="catalog-img">📷</div>
+    <div class="catalog-info">
+      <h3 class="catalog-item-title"><span data-i18n="model_placeholder">موديل</span> 06</h3>
+      <p class="catalog-item-code">#NT-P006</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fbot" style="border-top:none;">
+    <span data-i18n="footer_copy" id="footer-copy">© 2026 nasimtayer. جميع الحقوق محفوظة.</span>
+    <span class="dom">www.nasimtayer.com</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

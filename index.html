@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="نسيم طير - متخصصون في تصميم وتوريد الأزياء المدرسية بأعلى معايير الجودة لتناسب هوية مدرستك.">
+<meta name="keywords" content="أزياء مدرسية, زي مدرسي, تصميم, خياطة, تشاد">
+<meta property="og:title" content="nasim tayer | تصميم وتوريد الأزياء المدرسية">
+<meta property="og:description" content="نسيم طير - تصميم وتوريد الأزياء المدرسية.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/icos/nasimweb.png">
+<title>nasim tayer | تصميم وتوريد الأزياء المدرسية</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-switcher">
+  <button class="lang-btn active" data-lang="ar" onclick="setLang('ar')">العربية</button>
+  <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">Français</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="assets/icos/logo.png" alt="نسيم طير" class="lmark">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+    <li><a href="#services" data-i18n="nav_services">خدماتنا</a></li>
+    <li><a href="#gallery" data-i18n="nav_gallery">معرض الأزياء</a></li>
+    <li><a href="#partners" data-i18n="nav_partners">شركاؤنا</a></li>
+    <li><a href="#why" data-i18n="nav_why">لماذا نحن</a></li>
+    <li><a href="https://wa.me/905432830064" class="ncta" data-i18n="nav_contact" target="_blank">تواصل معنا</a></li>
+  </ul>
+  <div class="hburg" onclick="tog()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobmenu" id="mob">
+  <button class="mobclose" onclick="tog()">✕</button>
+  <a href="#home" onclick="tog()" data-i18n="nav_home">الرئيسية</a>
+  <a href="#services" onclick="tog()" data-i18n="nav_services">خدماتنا</a>
+  <a href="#gallery" onclick="tog()" data-i18n="nav_gallery">معرض الأزياء</a>
+  <a href="#partners" onclick="tog()" data-i18n="nav_partners">شركاؤنا</a>
+  <a href="#why" onclick="tog()" data-i18n="nav_why">لماذا نحن</a>
+  <a href="https://wa.me/905432830064" onclick="tog()" data-i18n="nav_contact" target="_blank">تواصل معنا</a>
+</div>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <div class="hdeco"></div>
+  <div class="hgrid"></div>
+  <div class="hinner">
+    <div class="htext">
+      <div class="htag"><span class="dot"></span><span data-i18n="hero_tag">متخصصون في الأزياء المدرسية — شركاؤكم الموثوقون</span></div>
+      <h1>
+        <span data-i18n="hero_h1_1">أزياء تعكس</span> <span class="acc" data-i18n="hero_h1_acc">هوية</span><br>
+        <span data-i18n="hero_h1_2">مدرستك</span>
+        <span class="ln2" data-i18n="hero_h1_sub">تصميم · توريد · تميّز</span>
+      </h1>
+      <p data-i18n="hero_p">نصمم ونورد الأزياء المدرسية بأعلى معايير الجودة، مع الحفاظ على هوية مدرستك وتميّزها. من أول فكرة حتى آخر قطعة في يد الطالب.</p>
+      <div class="hbtns">
+        <a href="https://wa.me/905432830064" class="btn-red" data-i18n="hero_btn1" target="_blank">احصل على عرض سعر</a>
+        <a href="#gallery" class="btn-ghost" data-i18n="hero_btn2">استعرض أعمالنا</a>
+      </div>
+    </div>
+    <div class="hvisual">
+      <div class="hcard">
+        <div class="chdr">
+          <div class="cico"><img src="assets/icos/logoo.png" alt="تصميم خاص" style="width:60px;height:60px;"></div>
+          <div>
+            <h3 data-i18n="hero_card_title">تصميم خاص بمدرستك</h3>
+            <p data-i18n="hero_card_sub">هوية بصرية فريدة من نوعها</p>
+          </div>
+        </div>
+        <div class="sgrid">
+          <div class="sitem"><span class="num"><span class="acc">+</span>10</span><span class="lbl" data-i18n="hero_stat1_lbl">مدرسة شريكة</span></div>
+          <div class="sitem"><span class="num">05<span class="acc">+</span></span><span class="lbl" data-i18n="hero_stat2_lbl">سنوات خبرة</span></div>
+          <div class="sitem"><span class="num">100<span class="acc">%</span></span><span class="lbl" data-i18n="hero_stat3_lbl">رضا العملاء</span></div>
+          <div class="sitem"><span class="num">48<span style="font-size:16px;color:var(--mid)">h</span></span><span class="lbl" data-i18n="hero_stat4_lbl">وقت الاستجابة</span></div>
+        </div>
+        <div class="cft">
+          <div class="cfdot"></div>
+          <p class="cftxt" data-i18n="hero_footer_txt">نرد على جميع الاستفسارات خلال 48 ساعة عمل. فريقنا متاح لخدمتكم.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="svc-inner">
+    <div class="slbl reveal" data-i18n="svc_lbl">خدماتنا</div>
+    <h2 class="stitle reveal"><span data-i18n="svc_title1">ما نقدمه</span> <span class="acc" data-i18n="svc_title_acc">لمدرستك</span></h2>
+    <p class="ssub reveal" data-i18n="svc_sub">حلول متكاملة للأزياء المدرسية من الفكرة حتى التسليم</p>
+    <div class="svcs-grid reveal">
+      <div class="sc"><div class="scn">01</div><div class="scico"><img src="assets/icos/design.png" alt="تصميم الهوية البصرية" style="width:60px;height:60px;"></div><h3 data-i18n="svc1_title">تصميم الهوية البصرية</h3><p data-i18n="svc1_p">نصمم زياً مدرسياً فريداً يعكس هوية مدرستك وقيمها، مع مراعاة الذوق العام والمعايير التعليمية.</p></div>
+      <div class="sc"><div class="scn">02</div><div class="scico"><img src="assets/icos/scissors.png" alt="الخياطة والتفصيل" style="width:60px;height:60px;"></div><h3 data-i18n="svc2_title">الخياطة والتفصيل</h3><p data-i18n="svc2_p">خياطة احترافية بأقمشة عالية الجودة مختارة بعناية، تدوم طويلاً وتحافظ على مظهرها المتميز.</p></div>
+      <div class="sc"><div class="scn">03</div><div class="scico"><img src="assets/icos/delivery.png" alt="التوريد والتسليم" style="width:60px;height:60px;"></div><h3 data-i18n="svc3_title">التوريد والتسليم</h3><p data-i18n="svc3_p">نضمن التسليم في الوقت المحدد لجميع الطلبيات، مع إدارة كاملة لسلسلة التوريد.</p></div>
+      <div class="sc"><div class="scn">04</div><div class="scico"><img src="assets/icos/measurements.png" alt="المقاسات والتخصيص" style="width:60px;height:60px;"></div><h3 data-i18n="svc4_title">المقاسات والتخصيص</h3><p data-i18n="svc4_p">قياسات دقيقة لجميع المراحل الدراسية، مع إمكانية تخصيص كل تفصيلة حسب متطلباتكم.</p></div>
+      <div class="sc"><div class="scn">05</div><div class="scico"><img src="assets/icos/logo_print.png" alt="الشعارات والطباعة" style="width:60px;height:60px;"></div><h3 data-i18n="svc5_title">الشعارات والطباعة</h3><p data-i18n="svc5_p">طباعة وتطريز شعار مدرستك بأعلى جودة تحافظ على الألوان وتتحمل الغسيل المتكرر لسنوات.</p></div>
+      <div class="sc"><div class="scn">06</div><div class="scico"><img src="assets/icos/maintenance.png" alt="الصيانة والتجديد" style="width:60px;height:60px;"></div><h3 data-i18n="svc6_title">الصيانة والتجديد</h3><p data-i18n="svc6_p">خدمات ما بعد البيع والصيانة الدورية، مع إمكانية تجديد المخزون بنفس الجودة سنة بعد سنة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gal-inner">
+    <div class="slbl reveal" data-i18n="gal_lbl">أعمالنا</div>
+    <h2 class="stitle reveal"><span data-i18n="gal_title1">معرض</span> <span class="acc" data-i18n="gal_title_acc">الأزياء</span></h2>
+    <p class="ssub reveal" data-i18n="gal_sub">لمحة من تصاميمنا المتميزة لمدارس مختلفة</p>
+    <div class="ggrid reveal">
+      <a href="catalog-formal.html" target="_blank" class="gi" style="text-decoration:none;color:inherit;"><div class="gpad"><div class="ginn"><img src="assets/images/spa.png" alt="الزي الرسمي" class="gemo"><h4 data-i18n="gal1_title">الزي الرسمي</h4><p data-i18n="gal1_sub">تصميم كلاسيكي فاخر</p></div><div class="gov"><span data-i18n="gal_overlay">عرض التفاصيل</span></div></div></a>
+      <a href="catalog-primary.html" target="_blank" class="gi" style="text-decoration:none;color:inherit;"><div class="gpad"><div class="ginn"><img src="assets/images/ibtidai.png" alt="زي المرحلة الابتدائية" class="gemo"><h4 data-i18n="gal2_title">زي المرحلة الابتدائية</h4><p data-i18n="gal2_sub">ألوان مبهجة ومريحة</p></div><div class="gov"><span data-i18n="gal_overlay">عرض التفاصيل</span></div></div></a>
+      <a href="catalog-sports.html" target="_blank" class="gi" style="text-decoration:none;color:inherit;"><div class="gpad"><div class="ginn"><img src="assets/images/ibtidai.png" alt="البدلة الرياضية" class="gemo"><h4 data-i18n="gal3_title">البدلة الرياضية</h4><p data-i18n="gal3_sub">راحة وأداء عالي</p></div><div class="gov"><span data-i18n="gal_overlay">عرض التفاصيل</span></div></div></a>
+      <a href="catalog-accessories.html" target="_blank" class="gi" style="text-decoration:none;color:inherit;"><div class="gpad"><div class="ginn"><img src="assets/images/ekse.png" alt="الإكسسوارات المدرسية" class="gemo"><h4 data-i18n="gal4_title">الإكسسوارات المدرسية</h4><p data-i18n="gal4_sub">ربطة عنق · حزام · قبعة</p></div><div class="gov"><span data-i18n="gal_overlay">عرض التفاصيل</span></div></div></a>
+      <a href="catalog-girls.html" target="_blank" class="gi" style="text-decoration:none;color:inherit;"><div class="gpad"><div class="ginn"><img src="assets/images/banat.png" alt="زي الفتيات" class="gemo"><h4 data-i18n="gal5_title">زي الفتيات</h4><p data-i18n="gal5_sub">أناقة وعفّة في آنٍ واحد</p></div><div class="gov"><span data-i18n="gal_overlay">عرض التفاصيل</span></div></div></a>
+    </div>
+    <div style="text-align:center;margin-top:36px;" class="reveal">
+      <a href="#contact" class="btn-ghost" data-i18n="gal_catalog_btn">طلب كتالوج كامل</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" style="max-width:none;">
+  <div class="ph reveal">
+    <div class="slbl" data-i18n="partners_lbl">ثقتهم شرفنا</div>
+    <h2 class="stitle"><span data-i18n="partners_title1">مدارسنا</span> <span class="acc" data-i18n="partners_title_acc">الشريكة</span></h2>
+  </div>
+  <div class="twrap">
+    <div class="ptrack">
+      <div class="plogo"><img src="assets/images/ibn_m.jpg" alt="ثانوية ابن مالك" class="pic"><span class="pnm">ثانوية ابن مالك</span></div>
+      <div class="plogo"><img src="assets/images/al_w.jpg" alt="ثانوية الوحدة العربية" class="pic"><span class="pnm">ثانوية الوحدة العربية</span></div>
+      <div class="plogo"><img src="assets/images/al_wih.jpg" alt="ثانوية الوحدة العربية" class="pic"><span class="pnm">ثانوية الوحدة العربية</span></div>
+      <div class="plogo"><img src="assets/images/manar.jpg" alt="ثانوية منارة أفريقيا" class="pic"><span class="pnm">ثانوية منارة أفريقيا</span></div>
+      <div class="plogo"><img src="assets/images/roi_fay.jpg" alt="ثانوية الملك فيصل" class="pic"><span class="pnm">ثانوية الملك فيصل</span></div>
+      <div class="plogo"><img src="assets/images/kadi.jpg" alt="مجمع القادسية العربية" class="pic"><span class="pnm">مجمع القادسية العربية</span></div>
+      <div class="plogo"><img src="assets/images/ibn_m.jpg" alt="ثانوية ابن مالك" class="pic"><span class="pnm">ثانوية ابن مالك</span></div>
+      <div class="plogo"><img src="assets/images/al_w.jpg" alt="ثانوية الوحدة العربية" class="pic"><span class="pnm">ثانوية الوحدة العربية</span></div>
+      <div class="plogo"><img src="assets/images/al_wih.jpg" alt="ثانوية الوحدة العربية" class="pic"><span class="pnm">ثانوية الوحدة العربية</span></div>
+      <div class="plogo"><img src="assets/images/manar.jpg" alt="ثانوية منارة أفريقيا" class="pic"><span class="pnm">ثانوية منارة أفريقيا</span></div>
+      <div class="plogo"><img src="assets/images/roi_fay.jpg" alt="ثانوية الملك فيصل" class="pic"><span class="pnm">ثانوية الملك فيصل</span></div>
+      <div class="plogo"><img src="assets/images/kadi.jpg" alt="مجمع القادسية العربية" class="pic"><span class="pnm">مجمع القادسية العربية</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" style="max-width:none;">
+  <div class="why-inner">
+    <div class="reveal">
+      <div class="wlbl" data-i18n="why_lbl">لماذا نحن</div>
+      <h2 class="wtitle">
+        <span data-i18n="why_title1">الجودة</span> <span class="acc" data-i18n="why_title_acc">ليست</span><br>
+        <span data-i18n="why_title2">مجرد كلمة</span>
+      </h2>
+      <p class="wdesc" data-i18n="why_desc">نؤمن أن الزي المدرسي المتميز يساهم في بناء الهوية المؤسسية للمدرسة ويعزز انتماء الطلاب. لذلك نضع الجودة في قلب كل قرار نتخذه.</p>
+      <div class="wlist">
+        <div class="witem"><div class="wico"><img src="assets/icos/kuma.png" alt="أقمشة معتمدة دولياً" style="width:50px;height:50px;"></div><div class="wtxt"><h4 data-i18n="why1_title">أقمشة معتمدة دولياً</h4><p data-i18n="why1_p">نستخدم أفضل الأقمشة التي تتحمل الاستخدام اليومي وتحافظ على مظهرها.</p></div></div>
+        <div class="witem"><div class="wico"><img src="assets/icos/deal.png" alt="عقود واضحة وشفافة" style="width:50px;height:50px;"></div><div class="wtxt"><h4 data-i18n="why2_title">عقود واضحة وشفافة</h4><p data-i18n="why2_p">التزام كامل بالمواعيد والمواصفات مع ضمان جودة موثّق على كل قطعة.</p></div></div>
+        <div class="witem"><div class="wico"><img src="assets/icos/long_deal.png" alt="شراكة طويلة الأمد" style="width:50px;height:50px;"></div><div class="wtxt"><h4 data-i18n="why3_title">شراكة طويلة الأمد</h4><p data-i18n="why3_p">لا نبحث عن صفقة واحدة، بل نبني علاقات مستدامة مع كل مدرسة نتعامل معها.</p></div></div>
+      </div>
+    </div>
+    <div class="wnums reveal">
+      <div class="wnb"><span class="big"><span class="rr">+</span>10</span><span class="lbl" data-i18n="why_stat1_lbl">مدرسة تثق بنا</span></div>
+      <div class="wnb"><span class="big">05<span class="rr">+</span></span><span class="lbl" data-i18n="why_stat2_lbl">سنوات في السوق</span></div>
+      <div class="wnb"><span class="big">100<span class="rr">%</span></span><span class="lbl" data-i18n="why_stat3_lbl">التزام بالمواعيد</span></div>
+      <div class="wnb"><span class="big">24<span style="font-size:20px;color:rgba(255,255,255,0.3)">/7</span></span><span class="lbl" data-i18n="why_stat4_lbl">دعم العملاء</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="con-inner">
+    <div class="slbl reveal" data-i18n="con_lbl">نحن هنا</div>
+    <h2 class="stitle reveal"><span data-i18n="con_title1">تواصل</span> <span class="acc" data-i18n="con_title_acc">معنا</span></h2>
+    <p class="ssub reveal" data-i18n="con_sub">أرسل لنا تفاصيل احتياجاتك وسنرد عليك خلال 24 ساعة عمل</p>
+    <div class="cwrap reveal">
+      <div class="cinfo">
+        <h3 data-i18n="con_info_title">معلومات التواصل</h3>
+        <p class="csub" data-i18n="con_info_sub">يسعدنا استقبال استفساراتكم في أي وقت. فريقنا جاهز لمساعدتكم في كل خطوة.</p>
+        <div class="cit"><div class="citco"><img src="assets/icos/call.png" alt="" class="ico"></div><div><span class="citlbl" data-i18n="con_phone_lbl">الهاتف</span><a href="tel:+23512345678" class="citval">+235 12 34 56</a></div></div>
+        <div class="cit"><div class="citco"><img src="assets/icos/wats.png" alt="" class="ico"></div><div><span class="citlbl" data-i18n="con_wa_lbl">واتساب</span><a href="https://wa.me/905432830064" target="_blank" class="citval" dir="ltr">+905 432 830 064</a></div></div>
+        <div class="cit"><div class="citco"><img src="assets/icos/mail.png" alt="" class="ico"></div><div><span class="citlbl" data-i18n="con_email_lbl">البريد الإلكتروني</span><a href="mailto:contact.nasimtayer@gmail.com" class="citval">contact.nasimtayer@gmail.com</a></div></div>
+        <div class="cit"><div class="citco"><img src="assets/icos/pin.png" alt="" class="ico"></div><div><span class="citlbl" data-i18n="con_location_lbl">الموقع</span><span class="citval" data-i18n="con_location_val">تشاد/انجمينا</span></div></div>
+        <div class="chours">
+          <h5 data-i18n="con_hours_title">ساعات العمل</h5>
+          <p data-i18n="con_hours_p" data-i18n-html>الأحد — الخميس: 8:00 ص — 6:00 م<br>الجمعة — السبت: مغلق</p>
+        </div>
+      </div>
+      <form class="cform" id="contactForm">
+        <h3 data-i18n="con_form_title">نموذج الاستفسار</h3>
+        <div class="frow">
+          <div class="fg">
+            <label for="name" data-i18n="con_form_name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" required data-i18n="con_form_name_placeholder" placeholder="أدخل اسمك الكامل">
+          </div>
+          <div class="fg">
+            <label for="email" data-i18n="con_form_email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="email" required data-i18n="con_form_email_placeholder" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label for="phone" data-i18n="con_form_phone">رقم الهاتف</label>
+            <input type="tel" id="phone" name="phone" data-i18n="con_form_phone_placeholder" placeholder="+235 12 34 56">
+          </div>
+          <div class="fg">
+            <label for="schoolName" data-i18n="con_form_school">اسم المدرسة</label>
+            <input type="text" id="schoolName" name="schoolName" data-i18n="con_form_school_placeholder" placeholder="اسم المدرسة">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="subject" data-i18n="con_form_subject">موضوع الاستفسار</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected data-i18n="con_form_subject_select">-- اختر موضوع الاستفسار --</option>
+            <option value="design" data-i18n="con_form_subject_design">تصميم جديد</option>
+            <option value="tailoring" data-i18n="con_form_subject_tailoring">خياطة وتفصيل</option>
+            <option value="supply" data-i18n="con_form_subject_supply">توريد وتسليم</option>
+            <option value="price" data-i18n="con_form_subject_price">عرض سعري</option>
+            <option value="maintenance" data-i18n="con_form_subject_maintenance">صيانة وتجديد</option>
+            <option value="other" data-i18n="con_form_subject_other">أخرى</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="message" data-i18n="con_form_message">رسالتك</label>
+          <textarea id="message" name="message" required data-i18n="con_form_message_placeholder" placeholder="اكتب تفاصيل استفسارك هنا..."></textarea>
+        </div>
+        <button type="submit" class="fbtn" data-i18n="con_form_submit">إرسال الاستفسار</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fmain">
+    <div class="fbrand">
+      <a href="#" class="logo">
+        <img src="assets/icos/logo.png" alt="nasimtayer" class="lmark">
+        <div class="ltxt"><span class="ar" style="color:rgba(255,255,255,0.85)">nasimtayer</span><span class="en">NASIM TAYER</span></div>
+      </a>
+      <p data-i18n="footer_desc">نصمم ونورد الأزياء المدرسية بأعلى معايير الجودة. شركاؤكم الموثوقون في رحلة التميز المدرسي.</p>
+      <div class="fsoc">
+        <a href="https://wa.me/905432830064" target="_blank"><img src="assets/icos/wats.png" alt="واتساب" class="ico"></a>
+        <a href="#"><img src="assets/icos/inist.png" alt="انستغرام" class="ico"></a>
+        <a href="#"><img src="assets/icos/face.png" alt="فيسبوك" class="ico"></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4 data-i18n="footer_links">روابط سريعة</h4>
+      <ul>
+        <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="#services" data-i18n="nav_services">خدماتنا</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">معرض الأزياء</a></li>
+        <li><a href="#partners" data-i18n="nav_partners">شركاؤنا</a></li>
+        <li><a href="#why" data-i18n="nav_why">لماذا نحن</a></li>
+        <li><a href="https://wa.me/905432830064" data-i18n="nav_contact" target="_blank">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4 data-i18n="footer_services_col">خدماتنا</h4>
+      <ul>
+        <li><a href="#services" data-i18n="footer_svc1">تصميم الهوية البصرية</a></li>
+        <li><a href="#services" data-i18n="footer_svc2">الخياطة والتفصيل</a></li>
+        <li><a href="#services" data-i18n="footer_svc3">التوريد والتسليم</a></li>
+        <li><a href="#services" data-i18n="footer_svc4">طباعة الشعارات</a></li>
+        <li><a href="#services" data-i18n="footer_svc5">الصيانة والتجديد</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span data-i18n="footer_copy" id="footer-copy">© 2026 nasimtayer. جميع الحقوق محفوظة.</span>
+    <span class="dom">www.nasimtayer.com</span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="tdot"></span>
+  <span id="toastMsg">تم إرسال طلبك بنجاح! سنتواصل معك قريباً.</span>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
