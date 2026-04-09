@@ -281,3 +281,19 @@ document.addEventListener('click', (e) => {
   const nav = document.querySelector('nav');
   if (nav && !nav.contains(e.target) && mob && mob.classList.contains('show')) tog();
 });
+
+// ===== WHATSAPP FAB SCROLL =====
+const waFab = document.getElementById('waFab');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (!waFab) return;
+  const currentScrollY = window.scrollY;
+  // Show when scrolling down, hide when scrolling up
+  if (currentScrollY > lastScrollY && currentScrollY > 200) {
+    waFab.classList.add('show');
+  } else if (currentScrollY < lastScrollY) {
+    waFab.classList.remove('show');
+  }
+  lastScrollY = currentScrollY;
+});
