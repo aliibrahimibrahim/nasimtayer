@@ -202,23 +202,62 @@ function sendForm(event) {
   const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
   const t = translations[currentLang];
   let isValid = true;
-  
+
   inputs.forEach(input => {
     if (!input.value.trim()) {
       isValid = false;
       input.focus();
     }
   });
-  
+
   if (!isValid) {
     alert(t.form_required);
     return;
   }
-  
-  // Here you could send the form data to your backend
-  // For now, we just show the toast notification
-  showToast();
-  form.reset();
+
+  // Disable the submit button while sending
+  const submitBtn = form.querySelector('.fbtn');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.6';
+    submitBtn.style.cursor = 'not-allowed';
+  }
+
+  // Send data to Formspree
+  const formData = new FormData(form);
+  fetch('https://formspree.io/f/mvzvqlod', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      window.location.href = 'thank-you.html';
+    } else {
+      return response.json().then(data => {
+        if (data.errors) {
+          alert(data.errors.map(e => e.message).join(', '));
+        } else {
+          alert(currentLang === 'fr'
+            ? "Une erreur s'est produite. Veuillez réessayer."
+            : 'حدث خطأ أثناء الإرسال. يرجى المحاولة مجدداً.');
+        }
+      });
+    }
+  })
+  .catch(() => {
+    alert(currentLang === 'fr'
+      ? "Erreur de connexion. Vérifiez votre connexion internet."
+      : 'خطأ في الاتصال. تحقق من اتصالك بالإنترنت.');
+  })
+  .finally(() => {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
+  });
 }
 
 // ===== TOAST NOTIFICATION =====

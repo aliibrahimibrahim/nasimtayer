@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>شكراً لتواصلك | نسيم طير</title>
+  <link rel="icon" type="image/png" href="assets/icos/nasimweb.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== THANK YOU PAGE ===== */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+
+    .ty-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, rgba(230,57,70,0.04) 0%, rgba(230,57,70,0.01) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative blobs */
+    .ty-blob1 {
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(230,57,70,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .ty-blob2 {
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ty-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 60px 50px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+      position: relative;
+      z-index: 1;
+      animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* checkmark circle */
+    .ty-icon {
+      width: 90px; height: 90px;
+      background: linear-gradient(135deg, rgba(230,57,70,0.12), rgba(230,57,70,0.05));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      border: 2px solid rgba(230,57,70,0.2);
+      animation: popIn 0.5s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .ty-icon svg {
+      width: 44px; height: 44px;
+      stroke: var(--acc);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* checkmark draw animation */
+    .ty-check {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: drawCheck 0.5s 0.6s ease forwards;
+    }
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .ty-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(230,57,70,0.08);
+      color: var(--acc);
+      font-size: 12px; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .ty-tag .dot { width: 5px; height: 5px; background: var(--acc); border-radius: 50%; }
+
+    .ty-card h1 {
+      font-size: 32px; font-weight: 700;
+      color: var(--dark); line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .ty-card h1 span { color: var(--acc); }
+
+    .ty-card p {
+      color: var(--gray); font-size: 15px; line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .ty-divider {
+      height: 1px; background: var(--border);
+      margin: 0 0 32px;
+    }
+
+    /* info row */
+    .ty-info {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: rgba(230,57,70,0.04);
+      border-radius: 10px; padding: 16px;
+      text-align: right; margin-bottom: 36px;
+    }
+    [dir="ltr"] .ty-info { text-align: left; }
+    .ty-info-ico {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(230,57,70,0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ty-info-ico svg { width: 18px; height: 18px; stroke: var(--acc); fill: none; stroke-width: 2; stroke-linecap: round; }
+    .ty-info-txt { font-size: 13px; color: var(--gray); line-height: 1.7; }
+    .ty-info-txt strong { color: var(--dark); display: block; margin-bottom: 2px; font-size: 14px; }
+
+    /* buttons */
+    .ty-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .ty-btns .btn-red,
+    .ty-btns .btn-ghost {
+      min-width: 160px; text-align: center;
+    }
+
+    /* footer inside page */
+    .ty-footer {
+      text-align: center; padding: 20px;
+      font-size: 12px; color: var(--mid);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .ty-card { padding: 40px 24px; }
+      .ty-card h1 { font-size: 26px; }
+      .ty-btns .btn-red, .ty-btns .btn-ghost { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="assets/icos/logo.png" alt="نسيم طير" class="lmark">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">الرئيسية</a></li>
+      <li><a href="index.html#services">خدماتنا</a></li>
+      <li><a href="index.html#gallery">معرض الأزياء</a></li>
+      <li><a href="index.html#partners">شركاؤنا</a></li>
+      <li><a href="index.html#contact" class="ncta">تواصل معنا</a></li>
+    </ul>
+  </nav>
+
+  <!-- THANK YOU CONTENT -->
+  <div class="ty-wrap">
+    <div class="ty-blob1"></div>
+    <div class="ty-blob2"></div>
+
+    <div class="ty-card">
+
+      <!-- Icon -->
+      <div class="ty-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline class="ty-check" points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <!-- Tag -->
+      <div class="ty-tag">
+        <span class="dot"></span>
+        <span id="ty-tag-text">تم الإرسال بنجاح</span>
+      </div>
+
+      <!-- Title -->
+      <h1 id="ty-title">شكراً لتواصلك <span>معنا!</span></h1>
+
+      <!-- Subtitle -->
+      <p id="ty-desc">
+        استلمنا رسالتك بنجاح، وسيتواصل معك فريقنا خلال <strong>24 ساعة عمل</strong>.
+        نحن سعداء بخدمتك وننتظر بناء شراكة متميزة معك.
+      </p>
+
+      <div class="ty-divider"></div>
+
+      <!-- Info box -->
+      <div class="ty-info">
+        <div class="ty-info-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="ty-info-txt">
+          <strong id="ty-info-title">في انتظار ردنا؟</strong>
+          <span id="ty-info-body">يمكنك التواصل معنا مباشرة عبر واتساب للحصول على رد فوري من فريقنا.</span>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="ty-btns">
+        <a href="index.html" onclick="window.location.href='index.html';return false;" class="btn-ghost" id="ty-btn-home">العودة للرئيسية</a>
+        <a href="https://wa.me/905432830064" target="_blank" rel="noopener noreferrer" class="btn-red" id="ty-btn-wa">
+          واتساب مباشر
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ty-footer">
+    © <span id="ty-year"></span> نسيم طير — <span style="color:var(--acc)">www.nasimtayer.com</span>
+  </div>
+
+  <script>
+    document.getElementById('ty-year').textContent = new Date().getFullYear();
+
+    // Language support
+    const tyTranslations = {
+      ar: {
+        tag: 'تم الإرسال بنجاح',
+        title: 'شكراً لتواصلك <span>معنا!</span>',
+        desc: 'استلمنا رسالتك بنجاح، وسيتواصل معك فريقنا خلال <strong>24 ساعة عمل</strong>. نحن سعداء بخدمتك وننتظر بناء شراكة متميزة معك.',
+        infoTitle: 'في انتظار ردنا؟',
+        infoBody: 'يمكنك التواصل معنا مباشرة عبر واتساب للحصول على رد فوري من فريقنا.',
+        btnHome: 'العودة للرئيسية',
+        btnWa: 'واتساب مباشر',
+      },
+      fr: {
+        tag: 'Message envoyé avec succès',
+        title: 'Merci de nous avoir <span>contactés !</span>',
+        desc: 'Nous avons bien reçu votre message. Notre équipe vous répondra dans les <strong>24 heures ouvrables</strong>. Nous sommes ravis de vous servir.',
+        infoTitle: 'Besoin d\'une réponse rapide ?',
+        infoBody: 'Contactez-nous directement via WhatsApp pour une réponse immédiate de notre équipe.',
+        btnHome: 'Retour à l\'accueil',
+        btnWa: 'WhatsApp direct',
+      }
+    };
+
+    function applyLang() {
+      let lang = 'ar';
+      try { lang = localStorage.getItem('nasim_lang') || 'ar'; } catch(e){}
+      if (!tyTranslations[lang]) lang = 'ar';
+      const t = tyTranslations[lang];
+      const html = document.documentElement;
+      html.lang = lang;
+      html.dir = lang === 'fr' ? 'ltr' : 'rtl';
+
+      document.getElementById('ty-tag-text').textContent = t.tag;
+      document.getElementById('ty-title').innerHTML = t.title;
+      document.getElementById('ty-desc').innerHTML = t.desc;
+      document.getElementById('ty-info-title').textContent = t.infoTitle;
+      document.getElementById('ty-info-body').textContent = t.infoBody;
+      // Update button text only (keep href intact)
+      const btnHome = document.getElementById('ty-btn-home');
+      btnHome.textContent = t.btnHome;
+      btnHome.href = 'index.html';
+      btnHome.onclick = function(){ window.location.href = 'index.html'; return false; };
+      document.getElementById('ty-btn-wa').textContent = t.btnWa;
+      document.title = lang === 'fr' ? 'Merci | Nasim Tayer' : 'شكراً لتواصلك | نسيم طير';
+    }
+
+    applyLang();
+  </script>
+
+</body>
+</html>
