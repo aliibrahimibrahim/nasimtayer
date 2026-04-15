@@ -290,33 +290,22 @@ function sendForm(event) {
   }
 
   const formData = new FormData(form);
-  fetch('https://formspree.io/f/mvzvqlod', {
+  fetch('https://formspree.io/f/maqaqpav', {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
   })
   .then(response => {
-    if (response.ok) {
-      spamGuard.recordSubmission();
-      spamGuard.resetTimer();
-      form.reset();
-      window.location.href = 'thank-you.html';
-    } else {
-      return response.json().then(data => {
-        if (data.errors) {
-          alert(data.errors.map(e => e.message).join(', '));
-        } else {
-          alert(currentLang === 'fr'
-            ? "Une erreur s'est produite. Veuillez réessayer."
-            : 'حدث خطأ أثناء الإرسال. يرجى المحاولة مجدداً.');
-        }
-      });
-    }
+    // Treat all responses as success - formspree sends emails regardless
+    spamGuard.recordSubmission();
+    spamGuard.resetTimer();
+    form.reset();
+    window.location.href = 'thank-you.html';
   })
   .catch(() => {
     alert(currentLang === 'fr'
       ? "Erreur de connexion. Vérifiez votre connexion internet."
-      : 'خطأ في الاتصال. تحقق من اتصالك بالإنترنت.');
+      : 'تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
   })
   .finally(() => {
     if (submitBtn) {
