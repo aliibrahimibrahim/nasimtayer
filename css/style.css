@@ -268,7 +268,7 @@ footer { background: var(--dark); color: white; padding: 60px 40px 20px; }
 .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; padding: 60px 40px; max-width: 1200px; margin: 0 auto; min-height: 40vh; }
 .catalog-item { border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: all 0.3s; }
 .catalog-item:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--acc); }
-.catalog-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: var(--mid); font-size: 60px; }
+.catalog-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: var(--mid); font-size: 60px; }
 .catalog-info { padding: 20px; text-align: center; }
 .catalog-item-title { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
 .catalog-item-code { font-size: 13px; color: var(--gray); font-family: 'Poppins', sans-serif; letter-spacing: 1px; }
