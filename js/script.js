@@ -195,6 +195,53 @@ function tog() {
   burger.classList.toggle('active');
 }
 
+// ===== SPAM GUARD =====
+const spamGuard = {
+  formLoadTime: null,
+  lastSubmitTime: null,
+  MIN_FILL_TIME: 4,        // seconds a human needs minimum
+  RATE_LIMIT_SECONDS: 120, // 2 minutes between submissions
+
+  init() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    // Start timer on first field interaction
+    form.addEventListener('focusin', () => {
+      if (!this.formLoadTime) this.formLoadTime = Date.now();
+    }, { once: true });
+  },
+
+  // Layer 1: Honeypot — _gotcha must be empty
+  checkHoneypot() {
+    const trap = document.getElementById('_gotcha');
+    return !trap || trap.value.trim() === '';
+  },
+
+  // Layer 2: Time check — bots submit instantly
+  checkTime() {
+    if (!this.formLoadTime) return false;
+    return (Date.now() - this.formLoadTime) / 1000 >= this.MIN_FILL_TIME;
+  },
+
+  // Layer 3: Rate limiting — one submission per 2 minutes
+  checkRateLimit() {
+    if (!this.lastSubmitTime) return true;
+    return (Date.now() - this.lastSubmitTime) / 1000 >= this.RATE_LIMIT_SECONDS;
+  },
+
+  // Layer 4: Content spam patterns
+  checkContent(name, message) {
+    if (/https?:\/\//.test(name)) return false;                       // URL in name
+    if (/<[a-z][\s\S]*>/i.test(name + message)) return false;        // HTML tags
+    if (/\b(viagra|cialis|casino|crypto|bitcoin|lottery|prize|SEO|backlink|free money|earn \$|click here)\b/i.test(message)) return false;
+    if (message.replace(/\s/g, '').length < 10) return false;        // too short
+    return true;
+  },
+
+  recordSubmission() { this.lastSubmitTime = Date.now(); },
+  resetTimer()       { this.formLoadTime = null; }
+};
+
 // ===== FORM SUBMISSION =====
 function sendForm(event) {
   event.preventDefault();
@@ -204,18 +251,37 @@ function sendForm(event) {
   let isValid = true;
 
   inputs.forEach(input => {
-    if (!input.value.trim()) {
-      isValid = false;
-      input.focus();
-    }
+    if (!input.value.trim()) { isValid = false; input.focus(); }
   });
 
-  if (!isValid) {
-    alert(t.form_required);
+  if (!isValid) { alert(t.form_required); return; }
+
+  // --- Spam checks ---
+  // Layer 1: Honeypot (silent — bots get no feedback)
+  if (!spamGuard.checkHoneypot()) return;
+
+  // Layer 2: Time check (silent)
+  if (!spamGuard.checkTime()) return;
+
+  // Layer 3: Rate limit
+  if (!spamGuard.checkRateLimit()) {
+    alert(currentLang === 'fr'
+      ? 'Veuillez attendre 2 minutes avant de renvoyer le formulaire.'
+      : 'يرجى الانتظار دقيقتين قبل إعادة الإرسال.');
     return;
   }
 
-  // Disable the submit button while sending
+  // Layer 4: Content check
+  const nameVal    = (document.getElementById('name')    || {}).value || '';
+  const messageVal = (document.getElementById('message') || {}).value || '';
+  if (!spamGuard.checkContent(nameVal, messageVal)) {
+    alert(currentLang === 'fr'
+      ? 'Votre message contient du contenu non autorisé. Veuillez le corriger.'
+      : 'تم رصد محتوى غير مسموح به في رسالتك. يرجى المراجعة والمحاولة مجدداً.');
+    return;
+  }
+
+  // --- All checks passed: send to Formspree ---
   const submitBtn = form.querySelector('.fbtn');
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -223,7 +289,6 @@ function sendForm(event) {
     submitBtn.style.cursor = 'not-allowed';
   }
 
-  // Send data to Formspree
   const formData = new FormData(form);
   fetch('https://formspree.io/f/mvzvqlod', {
     method: 'POST',
@@ -232,6 +297,8 @@ function sendForm(event) {
   })
   .then(response => {
     if (response.ok) {
+      spamGuard.recordSubmission();
+      spamGuard.resetTimer();
       form.reset();
       window.location.href = 'thank-you.html';
     } else {
@@ -294,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Attach form submit handler
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    spamGuard.init(); // Initialize spam protection
     contactForm.addEventListener('submit', sendForm);
   }
 });

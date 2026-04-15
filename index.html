@@ -402,6 +402,9 @@
             <textarea id="message" name="message" required data-i18n="con_form_message_placeholder"
               placeholder="اكتب تفاصيل استفسارك هنا..."></textarea>
           </div>
+          <!-- HONEYPOT: hidden from humans, bots fill it → rejected by Formspree -->
+          <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off"
+            style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" aria-hidden="true">
           <button type="submit" class="fbtn" data-i18n="con_form_submit">إرسال الاستفسار</button>
         </form>
       </div>
