@@ -2,12 +2,12 @@
 @font-face {
   font-family: 'Tajawal';
   src: url('../assets/fonts/Tajawal-Regular.ttf') format('truetype');
-  font-weight: normal; font-style: normal;
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Poppins';
   src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
-  font-weight: normal; font-style: normal;
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 
 /* ===== ROOT VARIABLES ===== */
