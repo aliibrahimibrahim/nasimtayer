@@ -281,7 +281,7 @@ function sendForm(event) {
     return;
   }
 
-  // --- All checks passed: send to Formspree ---
+  // --- All checks passed: send to both Make.com and Formspree ---
   const submitBtn = form.querySelector('.fbtn');
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -289,18 +289,46 @@ function sendForm(event) {
     submitBtn.style.cursor = 'not-allowed';
   }
 
+  // Prepare JSON payload for Make.com
+  const makePayload = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value || '',
+    schoolName: document.getElementById('schoolName').value || '',
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value,
+    timestamp: new Date().toISOString(),
+    language: currentLang
+  };
+
+  // Prepare FormData for Formspree
   const formData = new FormData(form);
-  fetch('https://formspree.io/f/maqaqpav', {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    // Treat all responses as success - formspree sends emails regardless
-    spamGuard.recordSubmission();
-    spamGuard.resetTimer();
-    form.reset();
-    window.location.href = 'thank-you.html';
+
+  // Send to both services simultaneously
+  Promise.all([
+    fetch('https://hook.us2.make.com/ok2m1to280jxao1nuxbmxcmpw7z6qwps', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(makePayload)
+    }),
+    fetch('https://formspree.io/f/maqaqpav', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+  ])
+  .then(responses => {
+    // Check if at least one request was successful
+    if (responses.some(r => r.ok)) {
+      spamGuard.recordSubmission();
+      spamGuard.resetTimer();
+      form.reset();
+      window.location.href = 'thank-you.html';
+    } else {
+      throw new Error('Server error');
+    }
   })
   .catch(() => {
     alert(currentLang === 'fr'
