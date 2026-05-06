@@ -257,6 +257,289 @@ function sendForm(event) {
   if (!isValid) { alert(t.form_required); return; }
 
   // --- Spam checks ---
+  if (!spamGuard.checkHoneypot()) return;
+  if (!spamGuard.checkTime()) return;
+
+  if (!spamGuard.checkRateLimit()) {
+    alert(currentLang === 'fr'
+      ? 'Veuillez attendre 2 minutes avant de renvoyer le formulaire.'
+      : 'يرجى الانتظار دقيقتين قبل إعادة الإرسال.');
+    return;
+  }
+
+  const nameVal    = (document.getElementById('name')    || {}).value || '';
+  const messageVal = (document.getElementById('message') || {}).value || '';
+  if (!spamGuard.checkContent(nameVal, messageVal)) {
+    alert(currentLang === 'fr'
+      ? 'Votre message contient du contenu non autorisé. Veuillez le corriger.'
+      : 'تم رصد محتوى غير مسموح به في رسالتك. يرجى المراجعة والمحاولة مجدداً.');
+    return;
+  }
+
+  // --- All checks passed: send to both Make.com and Formspree ---
+  const submitBtn = form.querySelector('.fbtn');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.6';
+    submitBtn.style.cursor = 'not-allowed';
+  }
+
+  // Prepare JSON payload for Make.com
+  const makePayload = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value || '',
+    schoolName: document.getElementById('schoolName').value || '',
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value,
+    timestamp: new Date().toISOString(),
+    language: currentLang
+  };
+
+  const formData = new FormData(form);
+
+  // تم تحديث الرابط هنا للرابط الصحيح 7omxmm9476o3lut2tei1tyl2s7ceekb4
+  Promise.all([
+    fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(makePayload)
+    }),
+    fetch('https://formspree.io/f/maqaqpav', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+  ])
+  .then(responses => {
+    if (responses.some(r => r.ok)) {
+      spamGuard.recordSubmission();
+      spamGuard.resetTimer();
+      form.reset();
+      window.location.href = 'thank-you.html';
+    } else {
+      throw new Error('Server error');
+    }
+  })
+  .catch(() => {
+    alert(currentLang === 'fr'
+      ? "Erreur de connexion. Vérifiez votre connexion internet."
+      : 'تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
+  })
+  .finally(() => {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
+  });
+}
+
+// ===== TOAST NOTIFICATION =====
+function showToast() {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  if (toastMsg) toastMsg.textContent = translations[currentLang].toast_msg;
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); }, 4000);
+}
+
+// ===== REVEAL ANIMATION ON SCROLL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'revealAnim 0.8s ease-out forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.addEventListener('DOMContentLoaded', () => {
+  let savedLang = 'ar';
+  try { savedLang = localStorage.getItem('nasim_lang') || 'ar'; } catch(e) {}
+  setLang(savedLang);
+
+  document.querySelectorAll('.reveal').forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.animationDelay = `${index * 0.1}s`;
+    observer.observe(el);
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    spamGuard.init();
+    contactForm.addEventListener('submit', sendForm);
+  }
+});
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const burger = document.querySelector('.hburg');
+        if (burger && burger.classList.contains('active')) tog();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// ===== CLOSE MOBILE MENU ON OUTSIDE CLICK =====
+document.addEventListener('click', (e) => {
+  const mob = document.getElementById('mob');
+  const nav = document.querySelector('nav');
+  if (nav && !nav.contains(e.target) && mob && mob.classList.contains('show')) tog();
+});
+
+// ===== WHATSAPP FAB SCROLL =====
+const waFab = document.getElementById('waFab');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  if (!waFab) return;
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY && currentScrollY > 200) {
+    waFab.classList.add('show');
+  } else if (currentScrollY < lastScrollY) {
+    waFab.classList.remove('show');
+  }
+  lastScrollY = currentScrollY;
+});    footer_svc3:'Fourniture et livraison', footer_svc4:'Impression de logos', footer_svc5:'Entretien et renouvellement',
+    footer_copy:`© ${new Date().getFullYear()} nasimtayer. Tous droits réservés.`,
+    toast_msg:'Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.',
+    back_to_main: "Retour à l'accueil", coming_soon: 'Bientôt', model_placeholder: 'Modèle',
+    cat_formal_title: 'Catalogue Uniforme Officiel', cat_formal_desc: 'Collection luxueuse de tenues officielles classiques',
+    cat_primary_title: 'Catalogue Primaire', cat_primary_desc: 'Couleurs et designs confortables pour nos enfants',
+    cat_sports_title: 'Catalogue Tenue Sportive', cat_sports_desc: 'Ensembles pratiques pour de hautes performances sportives',
+    cat_accessories_title: 'Catalogue Accessoires', cat_accessories_desc: "Touche finale pour l'élégance de l'étudiant",
+    cat_girls_title: 'Catalogue Filles', cat_girls_desc: 'Designs modestes et élégants pour nos étudiantes',
+  }
+};
+
+// ===== CURRENT LANGUAGE =====
+let currentLang = 'ar';
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  const t = translations[lang];
+  const html = document.documentElement;
+  html.lang = lang;
+  html.dir = t.dir;
+  document.body.style.fontFamily = t.font;
+
+  // Update all [data-i18n] elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+
+  // Update active lang button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  // RTL/LTR: mobile menu side
+  const mobMenu = document.getElementById('mob');
+  if (mobMenu) {
+    if (lang === 'fr') {
+      mobMenu.style.right = 'auto'; mobMenu.style.left = '0';
+      mobMenu.style.borderLeft = '1px solid var(--border)'; mobMenu.style.borderRight = 'none';
+    } else {
+      mobMenu.style.right = '0'; mobMenu.style.left = 'auto';
+      mobMenu.style.borderRight = 'none'; mobMenu.style.borderLeft = '1px solid var(--border)';
+    }
+  }
+
+  try { localStorage.setItem('nasim_lang', lang); } catch(e) {}
+}
+
+// ===== MOBILE MENU TOGGLE =====
+function tog() {
+  const mob = document.getElementById('mob');
+  const burger = document.querySelector('.hburg');
+  mob.classList.toggle('show');
+  burger.classList.toggle('active');
+}
+
+// ===== SPAM GUARD =====
+const spamGuard = {
+  formLoadTime: null,
+  lastSubmitTime: null,
+  MIN_FILL_TIME: 4,        // seconds a human needs minimum
+  RATE_LIMIT_SECONDS: 120, // 2 minutes between submissions
+
+  init() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    // Start timer on first field interaction
+    form.addEventListener('focusin', () => {
+      if (!this.formLoadTime) this.formLoadTime = Date.now();
+    }, { once: true });
+  },
+
+  // Layer 1: Honeypot — _gotcha must be empty
+  checkHoneypot() {
+    const trap = document.getElementById('_gotcha');
+    return !trap || trap.value.trim() === '';
+  },
+
+  // Layer 2: Time check — bots submit instantly
+  checkTime() {
+    if (!this.formLoadTime) return false;
+    return (Date.now() - this.formLoadTime) / 1000 >= this.MIN_FILL_TIME;
+  },
+
+  // Layer 3: Rate limiting — one submission per 2 minutes
+  checkRateLimit() {
+    if (!this.lastSubmitTime) return true;
+    return (Date.now() - this.lastSubmitTime) / 1000 >= this.RATE_LIMIT_SECONDS;
+  },
+
+  // Layer 4: Content spam patterns
+  checkContent(name, message) {
+    if (/https?:\/\//.test(name)) return false;                       // URL in name
+    if (/<[a-z][\s\S]*>/i.test(name + message)) return false;        // HTML tags
+    if (/\b(viagra|cialis|casino|crypto|bitcoin|lottery|prize|SEO|backlink|free money|earn \$|click here)\b/i.test(message)) return false;
+    if (message.replace(/\s/g, '').length < 10) return false;        // too short
+    return true;
+  },
+
+  recordSubmission() { this.lastSubmitTime = Date.now(); },
+  resetTimer()       { this.formLoadTime = null; }
+};
+
+// ===== FORM SUBMISSION =====
+function sendForm(event) {
+  event.preventDefault();
+  const form = document.getElementById('contactForm');
+  const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+  const t = translations[currentLang];
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (!input.value.trim()) { isValid = false; input.focus(); }
+  });
+
+  if (!isValid) { alert(t.form_required); return; }
+
+  // --- Spam checks ---
   // Layer 1: Honeypot (silent — bots get no feedback)
   if (!spamGuard.checkHoneypot()) return;
 
