@@ -298,6 +298,20 @@ function sendForm(event) {
 
   const formData = new FormData(form);
 
+  // Verify internet connection before sending
+  if (!navigator.onLine) {
+    alert(currentLang === 'fr'
+      ? "Veuillez vérifier votre connexion Internet avant d'envoyer le formulaire."
+      : "تأكد من اتصالك بالإنترنت قبل إرسال النموذج.");
+    
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
+    return;
+  }
+
   // تم تحديث الرابط هنا للرابط الصحيح 7omxmm9476o3lut2tei1tyl2s7ceekb4
   Promise.all([
     fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
