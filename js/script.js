@@ -312,8 +312,8 @@ function sendForm(event) {
     return;
   }
 
-  // تم تحديث الرابط هنا للرابط الصحيح 7omxmm9476o3lut2tei1tyl2s7ceekb4
-  Promise.all([
+  // Send to both services simultaneously
+  Promise.allSettled([
     fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
       method: 'POST',
       headers: {
@@ -327,20 +327,33 @@ function sendForm(event) {
       headers: { 'Accept': 'application/json' }
     })
   ])
-  .then(responses => {
-    if (responses.some(r => r.ok)) {
+  .then(results => {
+    // Check if at least one request was successful
+    const isSuccess = results.some(result => result.status === 'fulfilled' && result.value.ok);
+    
+    if (isSuccess) {
       spamGuard.recordSubmission();
       spamGuard.resetTimer();
       form.reset();
+      // Redirect to thank you page
       window.location.href = 'thank-you.html';
     } else {
-      throw new Error('Server error');
+      // Log errors for debugging
+      results.forEach((result, idx) => {
+        if (result.status === 'rejected') {
+          console.error(`Service ${idx + 1} failed:`, result.reason);
+        } else if (!result.value.ok) {
+          console.error(`Service ${idx + 1} returned error:`, result.value.status);
+        }
+      });
+      throw new Error('All services failed');
     }
   })
-  .catch(() => {
+  .catch((err) => {
+    console.error('Form submission error:', err);
     alert(currentLang === 'fr'
-      ? "Erreur de connexion. Vérifiez votre connexion internet."
-      : 'تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
+      ? "Erreur de connexion. Vérifiez votre connexion internet ou réessayعد المحاولة لاحقاً."
+      : 'حدث خطأ أثناء الإرسال. تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
   })
   .finally(() => {
     if (submitBtn) {
