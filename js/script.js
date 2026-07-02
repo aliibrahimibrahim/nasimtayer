@@ -48,7 +48,7 @@ const translations = {
     con_form_title: 'نموذج الاستفسار',
     con_form_name: 'الاسم الكامل', con_form_name_placeholder: 'أدخل اسمك الكامل',
     con_form_email: 'البريد الإلكتروني', con_form_email_placeholder: 'your@email.com',
-    con_form_phone: 'رقم الهاتف', con_form_phone_placeholder: '+235 12 34 56',
+    con_form_phone: 'رقم الهاتف', con_form_phone_placeholder: '+235 62 06 07 28',
     con_form_school: 'اسم المدرسة', con_form_school_placeholder: 'اسم المدرسة',
     con_form_subject: 'موضوع الاستفسار', con_form_subject_select: '-- اختر موضوع الاستفسار --',
     con_form_subject_design: 'تصميم جديد', con_form_subject_tailoring: 'خياطة وتفصيل',
@@ -68,6 +68,21 @@ const translations = {
     cat_sports_title: 'كتالوج البدلة الرياضية', cat_sports_desc: 'أطقم رياضية عملية لأداء رياضي عالي الجودة',
     cat_accessories_title: 'كتالوج الإكسسوارات المدرسية', cat_accessories_desc: 'لمسات نهائية تكمل أناقة الطالب',
     cat_girls_title: 'كتالوج زي الفتيات', cat_girls_desc: 'تصاميم محتشمة وأنيقة تلائم طالباتنا',
+    
+    // SEO Titles Arabic
+    seo_index_title: 'نسيم طير | تصميم وتوريد الأزياء المدرسية والزي الموحد في تشاد',
+    seo_cat_formal_title: 'كتالوج الزي المدرسي الرسمي | نسيم طير للأزياء المدرسية في تشاد',
+    seo_cat_primary_title: 'كتالوج زي المرحلة الابتدائية | نسيم طير للأزياء المدرسية في تشاد',
+    seo_cat_sports_title: 'كتالوج البدلة الرياضية المدرسية | نسيم طير للأزياء المدرسية في تشاد',
+    seo_cat_accessories_title: 'كتالوج الإكسسوارات المدرسية | نسيم طير للأزياء المدرسية في تشاد',
+    seo_cat_girls_title: 'كتالوج زي الفتيات المدرسي | نسيم طير للأزياء المدرسية في تشاد',
+    
+    seo_partner_ibn_malik_title: 'زي ثانوية ابن مالك المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
+    seo_partner_al_wehda_title: 'زي ثانوية الوحدة العربية المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
+    seo_partner_manarat_afriquia_title: 'زي ثانوية منارة أفريقيا المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
+    seo_partner_roi_fayal_title: 'زي ثانوية الملك فيصل المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
+    seo_partner_kadi_title: 'زي مجمع القادسية العربية المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
+    seo_partner_majd_title: 'زي مجمع المجد المدرسي | شركاء نسيم طير للأزياء المدرسية في تشاد',
   },
   fr: {
     dir: 'ltr', font: 'Poppins, sans-serif',
@@ -85,7 +100,7 @@ const translations = {
     svc_lbl: 'Nos services', svc_title1: 'Ce que nous offrons', svc_title_acc: 'à votre école',
     svc_sub: "Solutions complètes pour uniformes scolaires, de l'idée à la livraison",
     svc1_title: "Conception de l'identité visuelle", svc1_p: "Nous concevons un uniforme scolaire unique qui reflète l'identité et les valeurs de votre école, en tenant compte des normes éducatives.",
-    svc2_title: 'Couture et confection', svc2_p: 'Couture professionnelle avec des tissus de haute qualité soigneusement sélectionnés, durables et impeccables.',
+    svc2_title: 'Couture et confection', svc2_p: 'Couture professionnelle avec des tissus de haute qualité soigneusement sélectionnés, durables et uniques.',
     svc3_title: 'Fourniture et livraison', svc3_p: "Livraison garantie dans les délais pour toutes les commandes, avec une gestion complète de la chaîne d'approvisionnement.",
     svc4_title: 'Tailles et personnalisation', svc4_p: 'Mesures précises pour tous les niveaux scolaires, avec possibilité de personnaliser chaque détail selon vos exigences.',
     svc5_title: 'Logos et impression', svc5_p: 'Impression et broderie du logo de votre école avec la plus haute qualité, résistante aux lavages répétés pendant des années.',
@@ -117,7 +132,7 @@ const translations = {
     con_form_title: 'Formulaire de demande',
     con_form_name: 'Nom complet', con_form_name_placeholder: 'Entrez votre nom complet',
     con_form_email: 'Adresse e-mail', con_form_email_placeholder: 'votre@email.com',
-    con_form_phone: 'Numéro de téléphone', con_form_phone_placeholder: '+235 12 34 56',
+    con_form_phone: 'Numéro de téléphone', con_form_phone_placeholder: '+235 62 06 07 28',
     con_form_school: "Nom de l'école", con_form_school_placeholder: "Nom de l'école",
     con_form_subject: 'Sujet de la demande', con_form_subject_select: '-- Choisir le sujet de la demande --',
     con_form_subject_design: 'Nouvelle conception', con_form_subject_tailoring: 'Couture et confection',
@@ -132,11 +147,26 @@ const translations = {
     footer_copy: `© ${new Date().getFullYear()} nasimtayer. Tous droits réservés.`,
     toast_msg: 'Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.',
     back_to_main: "Retour à l'accueil", coming_soon: 'Bientôt', model_placeholder: 'Modèle',
-    cat_formal_title: 'Catalogue Uniforme Officiel', cat_formal_desc: 'Collection luxueuse de tenues officielles classiques',
+    cat_formal_title: 'Catalogue Uniforme Officiel', cat_formal_desc: 'Collection de tenues officielles classiques',
     cat_primary_title: 'Catalogue Primaire', cat_primary_desc: 'Couleurs et designs confortables pour nos enfants',
     cat_sports_title: 'Catalogue Tenue Sportive', cat_sports_desc: 'Ensembles pratiques pour de hautes performances sportives',
     cat_accessories_title: 'Catalogue Accessoires', cat_accessories_desc: "Touche finale pour l'élégance de l'étudiant",
     cat_girls_title: 'Catalogue Filles', cat_girls_desc: 'Designs modestes et élégants pour nos étudiantes',
+    
+    // SEO Titles French
+    seo_index_title: 'Nasim Tayer | Conception et Fourniture d’Uniformes Scolaires au Tchad',
+    seo_cat_formal_title: 'Catalogue Uniforme Officiel | Nasim Tayer Uniformes Scolaires Tchad',
+    seo_cat_primary_title: 'Catalogue Uniforme Primaire | Nasim Tayer Uniformes Scolaires Tchad',
+    seo_cat_sports_title: 'Catalogue Tenue Sportive | Nasim Tayer Uniformes Scolaires Tchad',
+    seo_cat_accessories_title: 'Catalogue Accessoires Scolaires | Nasim Tayer Uniformes Scolaires Tchad',
+    seo_cat_girls_title: 'Catalogue Uniforme Filles | Nasim Tayer Uniformes Scolaires Tchad',
+    
+    seo_partner_ibn_malik_title: 'Uniforme Lycée Ibn Malik | Partenaire Nasim Tayer Uniformes Scolaires Tchad',
+    seo_partner_al_wehda_title: 'Uniforme Lycée Union Arabe | Partenaire Nasim Tayer Uniformes Scolaires Tchad',
+    seo_partner_manarat_afriquia_title: 'Uniforme Lycée Phare de l’Afrique | Partenaire Nasim Tayer Tchad',
+    seo_partner_roi_fayal_title: 'Uniforme Lycée Roi Faisal | Partenaire Nasim Tayer Uniformes Scolaires Tchad',
+    seo_partner_kadi_title: 'Uniforme Complexe Al Kadi | Partenaire Nasim Tayer Uniformes Scolaires Tchad',
+    seo_partner_majd_title: 'Uniforme Complexe Al Majd | Partenaire Nasim Tayer Uniformes Scolaires Tchad',
   }
 };
 
@@ -153,7 +183,6 @@ function setLang(lang) {
   html.dir = t.dir;
   document.body.style.fontFamily = t.font;
 
-  // Update all [data-i18n] elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key] !== undefined) {
@@ -167,12 +196,10 @@ function setLang(lang) {
     }
   });
 
-  // Update active lang button
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
 
-  // RTL/LTR: mobile menu side
   const mobMenu = document.getElementById('mob');
   if (mobMenu) {
     if (lang === 'fr') {
@@ -199,42 +226,37 @@ function tog() {
 const spamGuard = {
   formLoadTime: null,
   lastSubmitTime: null,
-  MIN_FILL_TIME: 4,        // seconds a human needs minimum
-  RATE_LIMIT_SECONDS: 120, // 2 minutes between submissions
+  MIN_FILL_TIME: 4,
+  RATE_LIMIT_SECONDS: 120,
 
   init() {
     const form = document.getElementById('contactForm');
     if (!form) return;
-    // Start timer on first field interaction
     form.addEventListener('focusin', () => {
       if (!this.formLoadTime) this.formLoadTime = Date.now();
     }, { once: true });
   },
 
-  // Layer 1: Honeypot — _gotcha must be empty
   checkHoneypot() {
     const trap = document.getElementById('_gotcha');
     return !trap || trap.value.trim() === '';
   },
 
-  // Layer 2: Time check — bots submit instantly
   checkTime() {
     if (!this.formLoadTime) return false;
     return (Date.now() - this.formLoadTime) / 1000 >= this.MIN_FILL_TIME;
   },
 
-  // Layer 3: Rate limiting — one submission per 2 minutes
   checkRateLimit() {
     if (!this.lastSubmitTime) return true;
     return (Date.now() - this.lastSubmitTime) / 1000 >= this.RATE_LIMIT_SECONDS;
   },
 
-  // Layer 4: Content spam patterns
   checkContent(name, message) {
-    if (/https?:\/\//.test(name)) return false;                       // URL in name
-    if (/<[a-z][\s\S]*>/i.test(name + message)) return false;        // HTML tags
+    if (/https?:\/\//.test(name)) return false;
+    if (/<[a-z][\s\S]*>/i.test(name + message)) return false;
     if (/\b(viagra|cialis|casino|crypto|bitcoin|lottery|prize|SEO|backlink|free money|earn \$|click here)\b/i.test(message)) return false;
-    if (message.replace(/\s/g, '').length < 10) return false;        // too short
+    if (message.replace(/\s/g, '').length < 10) return false;
     return true;
   },
 
@@ -256,7 +278,6 @@ function sendForm(event) {
 
   if (!isValid) { alert(t.form_required); return; }
 
-  // --- Spam checks ---
   if (!spamGuard.checkHoneypot()) return;
   if (!spamGuard.checkTime()) return;
 
@@ -267,7 +288,7 @@ function sendForm(event) {
     return;
   }
 
-  const nameVal    = (document.getElementById('name')    || {}).value || '';
+  const nameVal = (document.getElementById('name') || {}).value || '';
   const messageVal = (document.getElementById('message') || {}).value || '';
   if (!spamGuard.checkContent(nameVal, messageVal)) {
     alert(currentLang === 'fr'
@@ -276,7 +297,6 @@ function sendForm(event) {
     return;
   }
 
-  // --- All checks passed: send to both Make.com and Formspree ---
   const submitBtn = form.querySelector('.fbtn');
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -284,7 +304,20 @@ function sendForm(event) {
     submitBtn.style.cursor = 'not-allowed';
   }
 
-  // Prepare JSON payload for Make.com
+  if (!navigator.onLine) {
+    alert(currentLang === 'fr'
+      ? "Veuillez vérifier votre connexion Internet avant d'envoyer le formulaire."
+      : "تأكد من اتصالك بالإنترنت قبل إرسال النموذج.");
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+    }
+    return;
+  }
+
+  const formData = new FormData(form);
+
   const makePayload = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
@@ -296,73 +329,42 @@ function sendForm(event) {
     language: currentLang
   };
 
-  const formData = new FormData(form);
+  // Make.com: fire-and-forget (لا نعتمد عليه للتوجيه)
+  fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(makePayload)
+  }).catch(() => {});
 
-  // Verify internet connection before sending
-  if (!navigator.onLine) {
-    alert(currentLang === 'fr'
-      ? "Veuillez vérifier votre connexion Internet avant d'envoyer le formulaire."
-      : "تأكد من اتصالك بالإنترنت قبل إرسال النموذج.");
-    
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-      submitBtn.style.cursor = '';
-    }
-    return;
-  }
-
-  // Send to both services simultaneously
-  Promise.allSettled([
-    fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(makePayload)
-    }),
-    fetch('https://formspree.io/f/maqaqpav', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+  // Formspree: هو المرجع الأساسي للتوجيه
+  fetch('https://formspree.io/f/maqaqpav', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(r => {
+      if (r.ok) {
+        spamGuard.recordSubmission();
+        spamGuard.resetTimer();
+        form.reset();
+        window.location.href = 'thank-you.html';
+      } else {
+        throw new Error('Server error');
+      }
     })
-  ])
-  .then(results => {
-    // Check if at least one request was successful
-    const isSuccess = results.some(result => result.status === 'fulfilled' && result.value.ok);
-    
-    if (isSuccess) {
-      spamGuard.recordSubmission();
-      spamGuard.resetTimer();
-      form.reset();
-      // Redirect to thank you page
-      window.location.href = 'thank-you.html';
-    } else {
-      // Log errors for debugging
-      results.forEach((result, idx) => {
-        if (result.status === 'rejected') {
-          console.error(`Service ${idx + 1} failed:`, result.reason);
-        } else if (!result.value.ok) {
-          console.error(`Service ${idx + 1} returned error:`, result.value.status);
-        }
-      });
-      throw new Error('All services failed');
-    }
-  })
-  .catch((err) => {
-    console.error('Form submission error:', err);
-    alert(currentLang === 'fr'
-      ? "Erreur de connexion. Vérifiez votre connexion internet ou réessayعد المحاولة لاحقاً."
-      : 'حدث خطأ أثناء الإرسال. تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
-  })
-  .finally(() => {
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-      submitBtn.style.cursor = '';
-    }
-  });
-}
+    .catch(() => {
+      alert(currentLang === 'fr'
+        ? "Erreur de connexion. Vérifiez votre connexion internet."
+        : 'تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        submitBtn.style.cursor = '';
+      }
+    });
+} // ← نهاية دالة sendForm
 
 // ===== TOAST NOTIFICATION =====
 function showToast() {
@@ -385,7 +387,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   let savedLang = 'ar';
-  try { savedLang = localStorage.getItem('nasim_lang') || 'ar'; } catch(e) {}
+  try { savedLang = localStorage.getItem('nasim_lang') || 'ar'; } catch (e) { }
   setLang(savedLang);
 
   document.querySelectorAll('.reveal').forEach((el, index) => {
@@ -438,304 +440,21 @@ window.addEventListener('scroll', () => {
     waFab.classList.remove('show');
   }
   lastScrollY = currentScrollY;
-});    footer_svc3:'Fourniture et livraison', footer_svc4:'Impression de logos', footer_svc5:'Entretien et renouvellement',
-    footer_copy:`© ${new Date().getFullYear()} nasimtayer. Tous droits réservés.`,
-    toast_msg:'Votre demande a été envoyée avec succès ! Nous vous contacterons bientôt.',
-    back_to_main: "Retour à l'accueil", coming_soon: 'Bientôt', model_placeholder: 'Modèle',
-    cat_formal_title: 'Catalogue Uniforme Officiel', cat_formal_desc: 'Collection luxueuse de tenues officielles classiques',
-    cat_primary_title: 'Catalogue Primaire', cat_primary_desc: 'Couleurs et designs confortables pour nos enfants',
-    cat_sports_title: 'Catalogue Tenue Sportive', cat_sports_desc: 'Ensembles pratiques pour de hautes performances sportives',
-    cat_accessories_title: 'Catalogue Accessoires', cat_accessories_desc: "Touche finale pour l'élégance de l'étudiant",
-    cat_girls_title: 'Catalogue Filles', cat_girls_desc: 'Designs modestes et élégants pour nos étudiantes',
-  }
-};
-
-// ===== CURRENT LANGUAGE =====
-let currentLang = 'ar';
-
-// ===== SET LANGUAGE =====
-function setLang(lang) {
-  if (!translations[lang]) return;
-  currentLang = lang;
-  const t = translations[lang];
-  const html = document.documentElement;
-  html.lang = lang;
-  html.dir = t.dir;
-  document.body.style.fontFamily = t.font;
-
-  // Update all [data-i18n] elements
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = t[key];
-      } else if (el.hasAttribute('data-i18n-html')) {
-        el.innerHTML = t[key];
-      } else {
-        el.textContent = t[key];
-      }
-    }
-  });
-
-  // Update active lang button
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-  });
-
-  // RTL/LTR: mobile menu side
-  const mobMenu = document.getElementById('mob');
-  if (mobMenu) {
-    if (lang === 'fr') {
-      mobMenu.style.right = 'auto'; mobMenu.style.left = '0';
-      mobMenu.style.borderLeft = '1px solid var(--border)'; mobMenu.style.borderRight = 'none';
-    } else {
-      mobMenu.style.right = '0'; mobMenu.style.left = 'auto';
-      mobMenu.style.borderRight = 'none'; mobMenu.style.borderLeft = '1px solid var(--border)';
-    }
-  }
-
-  try { localStorage.setItem('nasim_lang', lang); } catch(e) {}
-}
-
-// ===== MOBILE MENU TOGGLE =====
-function tog() {
-  const mob = document.getElementById('mob');
-  const burger = document.querySelector('.hburg');
-  mob.classList.toggle('show');
-  burger.classList.toggle('active');
-}
-
-// ===== SPAM GUARD =====
-const spamGuard = {
-  formLoadTime: null,
-  lastSubmitTime: null,
-  MIN_FILL_TIME: 4,        // seconds a human needs minimum
-  RATE_LIMIT_SECONDS: 120, // 2 minutes between submissions
-
-  init() {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
-    // Start timer on first field interaction
-    form.addEventListener('focusin', () => {
-      if (!this.formLoadTime) this.formLoadTime = Date.now();
-    }, { once: true });
-  },
-
-  // Layer 1: Honeypot — _gotcha must be empty
-  checkHoneypot() {
-    const trap = document.getElementById('_gotcha');
-    return !trap || trap.value.trim() === '';
-  },
-
-  // Layer 2: Time check — bots submit instantly
-  checkTime() {
-    if (!this.formLoadTime) return false;
-    return (Date.now() - this.formLoadTime) / 1000 >= this.MIN_FILL_TIME;
-  },
-
-  // Layer 3: Rate limiting — one submission per 2 minutes
-  checkRateLimit() {
-    if (!this.lastSubmitTime) return true;
-    return (Date.now() - this.lastSubmitTime) / 1000 >= this.RATE_LIMIT_SECONDS;
-  },
-
-  // Layer 4: Content spam patterns
-  checkContent(name, message) {
-    if (/https?:\/\//.test(name)) return false;                       // URL in name
-    if (/<[a-z][\s\S]*>/i.test(name + message)) return false;        // HTML tags
-    if (/\b(viagra|cialis|casino|crypto|bitcoin|lottery|prize|SEO|backlink|free money|earn \$|click here)\b/i.test(message)) return false;
-    if (message.replace(/\s/g, '').length < 10) return false;        // too short
-    return true;
-  },
-
-  recordSubmission() { this.lastSubmitTime = Date.now(); },
-  resetTimer()       { this.formLoadTime = null; }
-};
-
-// ===== FORM SUBMISSION =====
-function sendForm(event) {
-  event.preventDefault();
-  const form = document.getElementById('contactForm');
-  const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-  const t = translations[currentLang];
-  let isValid = true;
-
-  inputs.forEach(input => {
-    if (!input.value.trim()) { isValid = false; input.focus(); }
-  });
-
-  if (!isValid) { alert(t.form_required); return; }
-
-  // --- Spam checks ---
-  // Layer 1: Honeypot (silent — bots get no feedback)
-  if (!spamGuard.checkHoneypot()) return;
-
-  // Layer 2: Time check (silent)
-  if (!spamGuard.checkTime()) return;
-
-  // Layer 3: Rate limit
-  if (!spamGuard.checkRateLimit()) {
-    alert(currentLang === 'fr'
-      ? 'Veuillez attendre 2 minutes avant de renvoyer le formulaire.'
-      : 'يرجى الانتظار دقيقتين قبل إعادة الإرسال.');
-    return;
-  }
-
-  // Layer 4: Content check
-  const nameVal = (document.getElementById('name') || {}).value || '';
-  const messageVal = (document.getElementById('message') || {}).value || '';
-  if (!spamGuard.checkContent(nameVal, messageVal)) {
-    alert(currentLang === 'fr'
-      ? 'Votre message contient du contenu non autorisé. Veuillez le corriger.'
-      : 'تم رصد محتوى غير مسموح به في رسالتك. يرجى المراجعة والمحاولة مجدداً.');
-    return;
-  }
-
-  // --- All checks passed: send to both Make.com and Formspree ---
-  const submitBtn = form.querySelector('.fbtn');
-  if (submitBtn) {
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.6';
-    submitBtn.style.cursor = 'not-allowed';
-  }
-
-  // Prepare JSON payload for Make.com
-  const makePayload = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value || '',
-    schoolName: document.getElementById('schoolName').value || '',
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value,
-    timestamp: new Date().toISOString(),
-    language: currentLang
-  };
-
-  // Prepare FormData for Formspree
-  const formData = new FormData(form);
-
-  // Verify internet connection before sending
-  if (!navigator.onLine) {
-    alert(currentLang === 'fr'
-      ? "Veuillez vérifier votre connexion Internet avant d'envoyer le formulaire."
-      : "تأكد من اتصالك بالإنترنت قبل إرسال النموذج.");
-    return;
-  }
-
-  // Send to both services simultaneously
-  Promise.all([
-    fetch('https://hook.us2.make.com/7omxmm9476o3lut2tei1tyl2s7ceekb4', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(makePayload)
-    }),
-    fetch('https://formspree.io/f/maqaqpav', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-  ])
-    .then(responses => {
-      // Check if at least one request was successful
-      if (responses.some(r => r.ok)) {
-        spamGuard.recordSubmission();
-        spamGuard.resetTimer();
-        form.reset();
-        window.location.href = 'thank-you.html';
-      } else {
-        throw new Error('Server error');
-      }
-    })
-    .catch(() => {
-      alert(currentLang === 'fr'
-        ? "Erreur de connexion. Vérifiez votre connexion internet."
-        : 'تأكد من اتصالك بالإنترنت ثم حاول مرة أخرى.');
-    })
-    .finally(() => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-        submitBtn.style.cursor = '';
-      }
-    });
-}
-
-// ===== TOAST NOTIFICATION =====
-function showToast() {
-  const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toastMsg');
-  if (toastMsg) toastMsg.textContent = translations[currentLang].toast_msg;
-  toast.classList.add('show');
-  setTimeout(() => { toast.classList.remove('show'); }, 4000);
-}
-
-// ===== REVEAL ANIMATION ON SCROLL =====
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = 'revealAnim 0.8s ease-out forwards';
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.addEventListener('DOMContentLoaded', () => {
-  let savedLang = 'ar';
-  try { savedLang = localStorage.getItem('nasim_lang') || 'ar'; } catch (e) { }
-  setLang(savedLang);
-
-  document.querySelectorAll('.reveal').forEach((el, index) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.animationDelay = `${index * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Attach form submit handler
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    spamGuard.init(); // Initialize spam protection
-    contactForm.addEventListener('submit', sendForm);
-  }
 });
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (href !== '#') {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        const burger = document.querySelector('.hburg');
-        if (burger && burger.classList.contains('active')) tog();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+// ===== PARTNER ARROWS (mobile scroll) =====
+(function() {
+  const track = document.getElementById('ptrack');
+  const prevBtn = document.getElementById('partnerPrev');
+  const nextBtn = document.getElementById('partnerNext');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const scrollAmount = 200;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
-});
-
-// ===== CLOSE MOBILE MENU ON OUTSIDE CLICK =====
-document.addEventListener('click', (e) => {
-  const mob = document.getElementById('mob');
-  const nav = document.querySelector('nav');
-  if (nav && !nav.contains(e.target) && mob && mob.classList.contains('show')) tog();
-});
-
-// ===== WHATSAPP FAB SCROLL =====
-const waFab = document.getElementById('waFab');
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-  if (!waFab) return;
-  const currentScrollY = window.scrollY;
-  // Show when scrolling down, hide when scrolling up
-  if (currentScrollY > lastScrollY && currentScrollY > 200) {
-    waFab.classList.add('show');
-  } else if (currentScrollY < lastScrollY) {
-    waFab.classList.remove('show');
-  }
-  lastScrollY = currentScrollY;
-});
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+})();

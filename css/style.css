@@ -146,6 +146,30 @@ section { max-width: 100%; margin: 0 auto; padding: 80px 40px; width: 100%; over
 .pic { width: 72px; height: 72px; object-fit: cover; border-radius: 48px; }
 .pnm { font-size: 14px; font-weight: 500; }
 
+/* ===== PARTNER ARROWS (mobile only) ===== */
+.partner-arrow {
+  display: none; /* hidden on desktop */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(230,57,70,0.85);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  line-height: 1;
+}
+.partner-arrow:hover { background: var(--acc); transform: translateY(-50%) scale(1.1); }
+.partner-arrow-right { right: 10px; }
+.partner-arrow-left { left: 10px; }
+.twrap { position: relative; }
+
 /* ===== WHY ===== */
 #why { background: linear-gradient(135deg, rgba(230,57,70,0.05) 0%, rgba(230,57,70,0.02) 100%); }
 .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -259,7 +283,9 @@ footer { background: var(--dark); color: white; padding: 60px 40px 20px; width: 
   .hero { padding: 30px 16px; }
   .lang-switcher { display: none !important; }
   .ggrid { grid-template-columns: 1fr; }
-  .ptrack { gap: 15px; }
+  .ptrack { gap: 15px; animation: none !important; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
+  .ptrack::-webkit-scrollbar { display: none; }
+  .partner-arrow { display: flex; align-items: center; justify-content: center; }
 }
 @media (max-width: 480px) {
   * { max-width: 100vw; }
